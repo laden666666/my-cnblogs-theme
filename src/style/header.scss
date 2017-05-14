@@ -1,0 +1,257 @@
+//头
+& #header{
+  box-sizing: border-box;
+  width: 100%;
+  position: relative;
+  margin-bottom: 20px;
+
+  //头像
+  $img_size : 100px;
+  $img_url : "http://pic.cnblogs.com/avatar/510823/20130330121920.png";
+  &::before {
+    background-size: contain;
+    background-position: center;
+    display: block;
+    width: $img_size;
+    height: $img_size;
+    border-radius: 100%;
+    content: "";
+    border: 5px solid rgba(245, 93, 84, 0.9);
+    box-sizing: border-box;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    transform:translate(-50%, -50%);
+    animation: bounce 4s ease-in-out;
+    transition: background-image 2s;
+    box-shadow: 0px 6px 22px 0px rgba(136,0,0,0.3);
+    background-image: url($img_url);
+
+    @-webkit-keyframes bounce {
+      0% {
+        background-image:none;
+        box-shadow: 0px 6px 22px 0px rgba(136,0,0,0);
+        border: 5px solid rgba(245, 93, 84, 0.05);
+        border-width: 3px;
+        height: 0;
+        opacity: 1;
+        width: 0
+      }
+      15% {
+        height: $img_size / 116 * 20;
+        width: $img_size / 116 * 20
+      }
+      25% {
+        height: $img_size / 116 * 10;
+        width: $img_size / 116 * 10
+      }
+      35% {
+        height: $img_size / 116 * 20;
+        width: $img_size / 116 * 20
+      }
+      45% {
+        border-width: 3px;
+        height: $img_size / 116 * 10;
+        width: $img_size / 116 * 10
+      }
+      70% {
+        border-width: 5px;
+        height: $img_size;
+        width: $img_size
+      }
+      80% {
+        background-image:none;
+        box-shadow: 0px 6px 22px 0px rgba(136,0,0,0);
+        border: 5px solid rgba(245, 93, 84, 0.05);
+        height: $img_size;
+        width: $img_size;
+        opacity: 1
+      }
+      100% {
+        background-image: url($img_url);
+        box-shadow: 0px 6px 22px 0px rgba(136,0,0,0.3);
+        border: 5px solid rgba(245, 93, 84, 0.9);
+        height: $img_size;
+        width: $img_size;
+        opacity: 1
+      }
+    }
+  }
+  //头像的辅助线条圈
+  &::after {
+    display: block;
+    width: $img_size / 116 * 97;
+    height: $img_size / 116 * 97;
+    border-radius: 100%;
+    content: "";
+    border: 1px solid rgba(245, 93, 84, 0.3);
+    box-sizing: border-box;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    transform:translate(-50%, -50%);
+    animation: bounce2 4s ease-in-out;
+
+    @-webkit-keyframes bounce2 {
+      0% {
+        height: 0;
+        opacity: 1;
+        width: 0
+      }
+      15% {
+        height: $img_size / 116 * 30;
+        width: $img_size / 116 * 30
+      }
+      25% {
+        height: $img_size / 116 * 20;
+        width: $img_size / 116 * 20
+      }
+      35% {
+        height: $img_size / 116 * 30;
+        width: $img_size / 116 * 30
+      }
+      45% {
+        height: $img_size / 116 * 20;
+        width: $img_size / 116 * 20
+      }
+      70% {
+        height: $img_size / 116 * 97;
+        width: $img_size / 116 * 97
+      }
+      80% {
+        height: $img_size / 116 * 97;
+        width: $img_size / 116 * 97;
+        opacity: 1
+      }
+    }
+  }
+}
+
+//名字
+& #blogTitle{
+  margin-left: 120px;
+  animation: fadeIn1 5s ease-in-out;
+  @keyframes fadeIn1 {
+    0% {
+      opacity: 0; /*初始状态 透明度为0*/
+    }
+    80% {
+      transform: translateX(20px);
+      opacity: 0; /*中间状态 透明度为0*/
+    }
+    100% {
+      opacity: 1; /*结尾状态 透明度为1*/
+    }
+  }
+
+  & #lnkBlogLogo{
+    display: none;
+  }
+
+  & h1{
+    margin: 0;
+    height: 50px;
+    line-height: 50px;
+
+    & a{
+      text-decoration: none;
+      color: #f55d54
+    }
+  }
+
+  & h2{
+    display: none;
+  }
+
+}
+
+//导航
+& #navigator {
+  position: relative;
+  margin: 0 0 0 120px;
+  animation: fadeIn2 5s ease-in-out;
+
+  @keyframes fadeIn2 {
+    0% {
+      opacity: 0; /*初始状态 透明度为0*/
+    }
+    86% {
+      transform: translateY(10px);
+      opacity: 0; /*中间状态 透明度为0*/
+    }
+    100% {
+      opacity: 1; /*结尾状态 透明度为1*/
+    }
+  }
+
+  & #navList{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    line-height: 30px;
+    height: 30px;
+
+    &::after{
+      content: " ";
+      display: table;
+      clear: both;
+    }
+  }
+
+  & li {
+    float: left;
+    padding: 0 16px;
+    &:first-child {
+      margin-left: -16px;
+    }
+  }
+  & a {
+    color: rgb(39, 54, 78);
+    text-decoration: none;
+    position: relative;
+    display: block;
+
+    &::after{
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 100%;
+      transition: all 0.2s ease-out;
+      pointer-events: none;
+      height: 1px;
+      background: #f55d54;
+      bottom: 0;
+      transform: scaleX(0);
+    }
+
+    &:hover{
+      color: #27364e;
+      &::after{
+        transform: scaleX(1);
+      }
+    }
+  }
+}
+
+//统计
+& .blogStats{
+  margin: 0;
+
+  & span{
+    font-size: 12px ;
+    border-left: 2px solid #f55d54;
+    padding: 0 20px 0 4px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  & #header{
+    padding-top: 100px;
+  }
+  & #header::before,& #header::after{
+    left: 50%;
+  }
+  & #blogTitle, & #navigator{
+    margin: 0 auto;
+  }
+}
