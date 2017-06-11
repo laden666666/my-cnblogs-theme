@@ -30,16 +30,18 @@
     }
   }
 
+  //加关注
+  & #p_b_follow{
+
+  }
+
   //日历
   & #blogCalendar{
     margin-bottom:30px;
     font-size: 13px;
-
-    tr:first-child td{
-      border: none;
-      padding-bottom: 0;
-      text-shadow: none;
-      color: #fff;
+    //日历的头部
+    & .CalTitle{
+      background: #f55d54;
     }
 
     //日历的头部
@@ -49,6 +51,7 @@
       & td{
         height: 26px;
         border: none;
+        color: #fff;
       }
 
       & td:first-child, & td:last-child{
@@ -82,10 +85,12 @@
         &::before, &::after{
           content: '';
           position: absolute;
-          top: -5px;
+          top: -10px;
           width: 15px;
-          height: 5px;
+          height: 10px;
           background: #f55d54;
+          border-top-left-radius: 100%;
+          border-top-right-radius: 100%;
         }
         &::before{
           left: 0;
@@ -97,37 +102,25 @@
     }
 
     //日历的表头
-    & th, & td{
-      border: 1px solid #999;
+    & tr:not(:first-child) th, & tr:not(:first-child) td{
+      border: solid #999;
+      border-width: 1px 0 0 1px;
       font-size: 12px;
       padding: 3px 0;
       color: #000;
-      text-shadow: 0 0 3px rgba(0,0,0, .3);
+      text-shadow: 0 0 1px rgba(0,0,0, .3);
+      background: #fff;
+
+      &:last-child{
+        border-right-width: 1px;
+      }
 
       & a{
         color: #f55d54;
       }
     }
-  }
-
-  //搜索框
-  & #sidebar_search{
-    margin-bottom: 20px;
-    & input[type='button'] {
-      border: none;
-      background: #f55d54;
-      color: #fff;
-      padding: 3px 10px;
-      text-decoration: none;
-      margin-left: 5px;
-      font-size: 14px;
-      min-width: 80px;
-      height: 26px;
-      line-height: 20px;
-      display: inline-block;
-      text-align: center;
-      vertical-align: middle;
-      cursor: pointer;
+    & tr:last-child td{
+      border-bottom-width: 1px;
     }
   }
 
@@ -137,11 +130,19 @@
     margin-bottom:30px;
     & li{
       font-size: 13px;
+      line-height: 18px;
       color: #f55d54;
       text-decoration: underline;
       & a{
-        color: #f55d54;
+        color: #333;
       }
+      margin-bottom: 8px;
     }
+  }
+
+
+  //隐藏无用的导航
+  & #sidebar_recentcomments, & #sidebar_shortcut, & #sidebar_categories, & #sidebar_topcommentedposts{
+    display: none;
   }
 }
