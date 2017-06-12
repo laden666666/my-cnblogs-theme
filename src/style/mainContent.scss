@@ -1,7 +1,9 @@
 #mainContent{
-  margin-right: 240px;
+  flex: 1;
+  margin-right: 40px;
   @media screen and (max-width: 768px) {
     margin-right: 0;
+    width: 100%;
   }
 
   $icon_width: 100px;
@@ -170,6 +172,25 @@
     }
   }
 
+  //内容
+  & .cnblogs_post_body{
+    // 主标题
+    & #cb_post_title_url{
+      display: inline-block;
+      transform: translateX(0px);
+      color: #399ab2;
+      transition: transform 0.2s linear,color 0.2s linear;
+      -webkit-transition: transform 0.2s linear,color 0.2s linear;
+      -moz-transition: transform 0.2s linear,color 0.2s linear;
+      -o-transition: transform 0.2s linear,color 0.2s linear;
+    }
+
+    //图片
+    & img{
+      max-width: 100%;
+    }
+  }
+
   //页面
   & .topicListFooter, & .topicListFooter .pager{
     color: #f55d54;
@@ -233,6 +254,7 @@
       color: #f55d54;
       text-decoration: underline;
       font-size: 13px;
+      vertical-align: middle;
     }
 
     &::after{
@@ -342,7 +364,49 @@
     }
   }
 
-  //新闻
+  //评论列表
+  & #blog-comments-placeholder{
+    margin-bottom: 10px;
+
+    & .feedback_area_title{
+      border-bottom: 1px solid #ddd;
+      font-size: 14px;
+      font-weight: bold;
+      margin: 20px 0 10px;
+    }
+    & .feedbackItem{
+      padding: 8px;
+      border-bottom: 1px dotted #ccc;
+      font-size: 13px;
+    }
+    & .feedbackListSubtitle{
+      & a{
+        padding-right: 10px;
+        color: #399ab2;
+        text-decoration: none;
+      }
+      & .feedbackManage{
+        float: right;
+
+      }
+    }
+
+    & .feedbackCon{
+      color: #888;
+      font-size: 12px;
+      line-height: 135%;
+      padding: 7px;
+      padding-right: 0;
+      margin-left: 1em;
+    }
+
+    & .comment_vote a{
+      border-bottom: none;
+      color: gray;
+    }
+  }
+
+  //新闻隐藏
   #under_post_news, #under_post_kb {
     display: none;
   }

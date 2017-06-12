@@ -17,6 +17,8 @@ body{
 
 #main{
   position: relative;
+  display: flex;
+  flex-wrap: wrap;
   @import "mainContent.scss";
   @import "sideBar.scss";
 
