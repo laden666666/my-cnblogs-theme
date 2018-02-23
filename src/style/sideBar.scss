@@ -1,3 +1,5 @@
+@import "./base.scss";
+
 #sideBar{
   width: 200px;
   position: absolute;
@@ -25,28 +27,42 @@
       font-size: 13px;
 
       & a{
-        color: #f55d54;
+        color: $themeColor;
       }
     }
   }
 
   //加关注
-  & #p_b_follow{
+  & #p_b_follow > a{
+    color: $themeColor2;
+    padding: 3px 0px;
+    text-decoration: underline;
+    font-size: 15px;
+    min-width: 40px;
+    height: 20px;
+    line-height: 20px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+  }
 
+  & #sidebar_search{
+    display: none;
   }
 
   //日历
-  & #blogCalendar{
+    & #blogCalendar{
+    display: none;
     margin-bottom:30px;
     font-size: 13px;
     //日历的头部
     & .CalTitle{
-      background: #f55d54;
+      background: $themeColor;
     }
 
     //日历的头部
     & .CalTitle tr:first-child{
-      background: #f55d54;
+      background: $themeColor;
 
       & td{
         height: 26px;
@@ -57,7 +73,7 @@
       & td:first-child, & td:last-child{
         position: relative;
         & a{
-          color: #f55d54;
+          color: $themeColor;
         }
       }
       & td:first-child a::before{
@@ -88,7 +104,7 @@
           top: -10px;
           width: 15px;
           height: 10px;
-          background: #f55d54;
+          background: $themeColor;
           border-top-left-radius: 100%;
           border-top-right-radius: 100%;
         }
@@ -116,7 +132,7 @@
       }
 
       & a{
-        color: #f55d54;
+        color: $themeColor;
       }
     }
     & tr:last-child td{
@@ -131,7 +147,7 @@
     & li{
       font-size: 13px;
       line-height: 18px;
-      color: #f55d54;
+      color: $themeColor;
       text-decoration: underline;
       & a{
         color: #333;
